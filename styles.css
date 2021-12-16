@@ -1,0 +1,23 @@
+body{
+    margin: 24px 24px 64px;
+    font-size: small;
+}
+/*label{
+    display:block;
+}*/
+h1{
+    font-size: 24px;
+}
+h2{
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+#red{
+    color: #de3400;
+}
+dl{ margin-left: 16px;}
+dt{ margin-top: 16px;}
+dd{ margin-top: 4px;}

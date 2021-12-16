@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h1>環境音のエフェクト変換</h1>
+    <div id="click-start">
+        <button>クリックしてスタート</button>
+        <p><span id="red">↑ 必ずクリックしてから始めてください！</span></p>
+    </div>
+
+    <div>
+        <h2>Control Audio</h2>
+        <dl>
+            <dt><label for="file-upload-audio">SELECT AUDIO FILE : <span id="progress-file-upload-audio"></span></label>
+            </dt>
+            <dd><input type="file" id="file-upload-audio" accept="audio/*" /></dd>
+            <dt><label>PLAY / PAUSE</label></dt>
+            <dd>
+                <button id="audio-play">PLAY</button>
+                <button id="audio-pause">PAUSE</button>
+            </dd>
+            <dt><label for="range-volume">VOLUME : <span id="output-volume">1</span></label></dt>
+            <dd><input type="range" id="range-volume" value="1" min="0" max="1" step="0.05" /></dd>
+            <dt><label for="range-playback-rate">PLAYBACK RATE : <span id="output-playback-rate">1</span></label></dt>
+            <dd><input type="range" id="range-playback-rate" value="1" min="0.05" max="2" step="0.05" /></dd>
+            <dt><label><input type="checkbox" checked> LOOP</label></dt>
+            <dd class="invisibility"></dd>
+        </dl>
+    </div>
+    <div>
+        <h2>Control Chorus / コーラス</h2>
+        <dl>
+            <dt><label for="range-chorus-mix">MIX : <span id="output-chorus-mix">0</span></label></dt>
+            <dd><button id="range-chorus-mix">Mix Start</button></dd>
+            <dt><label for="range-chorus-delay-time">DELAY TIME : <span id="output-chorus-delay-time">30</span>
+                    msec</label></dt>
+            <dd><input type="range" id="range-chorus-delay-time" value="30" min="0" max="50" step="1" /></dd>
+            <dt><label for="range-chorus-depth">DEPTH : <span id="output-chorus-depth">15</span> %</label></dt>
+            <dd><input type="range" id="range-chorus-depth" value="15" min="0" max="100" step="1" /></dd>
+            <dt><label for="range-chorus-rate">RATE : <span id="output-chorus-rate">0.5</span> Hz</label></dt>
+            <dd><input type="range" id="range-chorus-rate" value="0.5" min="0" max="1" step="0.01" /></dd>
+        </dl>
+    </div>
+    
+    <div>
+        <h2>Control Phaser / フェイザー</h2>
+        <dl>
+            <dt><label for="range-phaser-mix">MIX : <span id="output-phaser-mix">0</span></label></dt>
+            <dd><button id="range-phaser-mix">Mix Start</dd>
+            <dt>ALL-PASS FILTERs</dt>
+            <dd>
+                <form id="form-phaser-stage" name="form-phaser-stage">
+                    <label><input type="radio" name="radio-phaser-stage" value="0" />0</label>
+                    <label><input type="radio" name="radio-phaser-stage" value="2" />2</label>
+                    <label><input type="radio" name="radio-phaser-stage" value="4" checked />4</label>
+                    <label><input type="radio" name="radio-phaser-stage" value="8" />8</label>
+                    <label><input type="radio" name="radio-phaser-stage" value="12" />12</label>
+                    <label><input type="radio" name="radio-phaser-stage" value="24" />24</label>
+                </form>
+            </dd>
+            <dt><label for="range-phaser-frequency">FREQUENCY : <span id="output-phaser-frequency">350</span> Hz</label>
+            </dt>
+            <dd><input type="range" id="range-phaser-frequency" value="350" min="350" max="8000" step="1" /></dd>
+            <dt><label for="range-phaser-depth">DEPTH : <span id="output-phaser-depth">0</span> %</label></dt>
+            <dd><input type="range" id="range-phaser-depth" value="0" min="0" max="90" step="1" /></dd>
+            <dt><label for="range-phaser-rate">RATE : <span id="output-phaser-rate">0</span> Hz</label></dt>
+            <dd><input type="range" id="range-phaser-rate" value="0" min="0" max="10" step="0.1" /></dd>
+
+            <dt><label for="range-phaser-feedback">FEEDBACK : <span id="output-phaser-feedback">0</span></label></dt>
+            <dd><input type="range" id="range-phaser-feedback" value="0" min="0" max="0.95" step="0.05" /></dd>
+        </dl>
+    </div>
+
+    <script src="index_cho.js"></script>
+    <script src="index_pha.js"></script>
+</body>
+
+</html>
