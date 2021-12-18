@@ -1,15 +1,15 @@
 body{
     margin: 24px 24px 64px;
-    font-size: small;
+    /*font-size: small;*/
 }
 /*label{
     display:block;
 }*/
-h1{
+/*h1{
     font-size: 24px;
-}
+}*/
 h2{
-    font-size: 16px;
+    /*font-size: 16px;*/
     padding-top: 10px;
     padding-bottom: 10px;
     border-top: 1px solid;
