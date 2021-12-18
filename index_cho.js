@@ -257,16 +257,40 @@
             document.getElementById("range-volume").addEventListener(
                 "input",
                 function () {
-                  var min = gain.gain.minValue || 0;
-                  var max = gain.gain.maxValue || 1;
-          
-                  if (this.valueAsNumber >= min && this.valueAsNumber <= max) {
-                    gain.gain.value = this.valueAsNumber;
-                    document.getElementById("output-volume").textContent = this.value;
-                  }
-                },
-                false
-              );
+                    var min = gain.gain.minValue || 0;
+                    var max = gain.gain.maxValue || 1;
+
+                    if (this.valueAsNumber >= min && this.valueAsNumber <= max) {
+                        gain.gain.value = this.valueAsNumber;
+                        document.getElementById("output-volume").textContent = this.value;
+                    }
+                },false);
+
+            // Effect Volume
+            document.getElementById("button-volume-mix").addEventListener(
+                "click",
+                function changeVolume() {
+                    gain.gain.value = 0.1;
+                    requestAnimationFrame(changeVolume);
+                    analyser.getByteFrequencyData(dataArray);
+                    var sum = dataArray.reduce(function (acc, cur) {
+                        return acc + cur;
+                    });
+                    var average = sum / bufferLength;
+                    var system = average / 10;
+
+                    if (system >= 0 && system <= 1) {
+                        gain.gain.value = system;
+                        document.getElementById("output-volume-mix").textContent = system;
+                    } else if (1 < system) {
+                        gain.gain.value = 1;
+                        document.getElementById("output-volume-mix").textContent = 1;
+                    } else {
+                        gain.gain.value = 0;
+                        document.getElementById("output-volume-mix").textContent = 0;
+                    }
+
+                },false);
 
             // Control playbackRate
             document.getElementById('range-playback-rate').addEventListener('input', function () {
