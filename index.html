@@ -20,11 +20,11 @@
             <dt><label for="file-upload-audio">SELECT AUDIO FILE : <span id="progress-file-upload-audio"></span></label>
             </dt>
             <dd><input type="file" id="file-upload-audio" accept="audio/*" /></dd>
-            <dt><label>PLAY / PAUSE</label></dt>
+            <!--<dt><label>PLAY / PAUSE</label></dt>
             <dd>
                 <button id="audio-play">PLAY</button>
                 <button id="audio-pause">PAUSE</button>
-            </dd>
+            </dd>-->
             <dt><label for="range-volume">VOLUME : <span id="output-volume">1</span></label></dt>
             <dd><input type="range" id="range-volume" value="1" min="0" max="1" step="0.05" /></dd>
             <dt><label for="range-playback-rate">PLAYBACK RATE : <span id="output-playback-rate">1</span></label></dt>
@@ -34,7 +34,14 @@
         </dl>
     </div>
     <div>
-        <h2>Control Chorus / コーラス</h2>
+        <h2>Effect Volume</h2>
+        <dl>
+            <dt><label for="button-volume-mix">Volume : <span id="output-volume-mix">0</span></label></dt>
+            <dd><button id="button-volume-mix">Mix Start</button></dd>
+        </dl>
+    </div>
+    <div>
+        <h2>Effect Chorus / コーラス</h2>
         <dl>
             <dt><label for="range-chorus-mix">MIX : <span id="output-chorus-mix">0</span></label></dt>
             <dd><button id="range-chorus-mix">Mix Start</button></dd>
@@ -47,9 +54,9 @@
             <dd><input type="range" id="range-chorus-rate" value="0.5" min="0" max="1" step="0.01" /></dd>
         </dl>
     </div>
-    
+
     <div>
-        <h2>Control Phaser / フェイザー</h2>
+        <h2>Effect Phaser / フェイザー</h2>
         <dl>
             <dt><label for="range-phaser-mix">MIX : <span id="output-phaser-mix">0</span></label></dt>
             <dd><button id="range-phaser-mix">Mix Start</dd>
